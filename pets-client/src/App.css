@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+form label {
+  margin-bottom: 5px;
+}
+
+form input {
+  padding: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+.create-btn {
+  display: inline-block;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.create-btn:hover {
+  background-color: #218838;
+}
+
+button.edit,
+button.delete {
+  padding: 5px 10px;
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+button.edit {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button.edit:hover {
+  background-color: #e0a800;
+}
+
+button.delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button.delete:hover {
+  background-color: #c82333;
+}
+
+.AddBtn {
+  margin-top: 0.3rem;
+}
+
+.MovieContainer {
+  margin: 0.8rem;
+}
+
+.MovieContainer .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+}
+
+.EditBtn {
+  margin: 2px !important;
+}
+
+.DeleteBtn {
+  text-align: right;
+  margin-right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.EditForm {
+  border: 1px solid #000;
+  padding: 12px;
+}
+
+
+.NavContainer > a {
+  margin: 1rem;
+}
+
+.NavContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.MovieImage {
+  height: 150px;
+}
+
+.SingleMovieContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

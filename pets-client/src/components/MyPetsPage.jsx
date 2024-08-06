@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 import axios from 'axios';
 import PetList from '../components/PetList'
 import { AuthContext } from '../context/AuthProvider';
@@ -29,7 +29,8 @@ function MyPetsPage() {
   };
 
   return (
-    <div>
+    <Container>
+     <div className='content'>
       <h1>My Pets Page</h1>
       <button onClick={handleToggle}>
         Show {petType === 'Owned' ? 'Saved' : 'Owned'} Pets
@@ -42,6 +43,7 @@ function MyPetsPage() {
         <PetList></PetList>
       )}
     </div>
+    </Container>
   );
 }
 

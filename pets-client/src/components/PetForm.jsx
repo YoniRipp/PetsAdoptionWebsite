@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { PetContext } from '../context/PetProvider';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 
 const PetForm = () => {
   const [type, setType] = useState('');
@@ -24,7 +24,7 @@ const PetForm = () => {
     petData.append('type', type);
     petData.append('name', name);
     petData.append('adoptionStatus', adoptionStatus);
-    petData.append('imageUrl', imageFile); // Note: Ensure this matches your backend field
+    petData.append('imageUrl', imageFile); 
     petData.append('height', height);
     petData.append('weight', weight);
     petData.append('color', color);
@@ -49,7 +49,9 @@ const PetForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Container>
+    <Form onSubmit={handleSubmit} >
+      <h1>Add Pet Form</h1>
       <Form.Group controlId='petType'>
         <Form.Label>Type</Form.Label>
         <Form.Control as='select' value={type} onChange={(e) => setType(e.target.value)} required>
@@ -106,6 +108,7 @@ const PetForm = () => {
         Add Pet
       </Button>
     </Form>
+    </Container>
   );
 };
 

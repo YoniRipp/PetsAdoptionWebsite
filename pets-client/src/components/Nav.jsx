@@ -18,7 +18,7 @@ const Nav = () => {
       const res = await axios.get('http://localhost:8080/users/logout', { withCredentials: true });
       if (res.data.ok) {
         setIsLoggedIn(false);
-        setUser(null);  
+        setUser(null);
         setShouldRender(false);
       }
     } catch (err) {
@@ -27,7 +27,7 @@ const Nav = () => {
   };
 
   if (!shouldRender) {
-    return null; 
+    return null;
   }
 
   return (
@@ -43,6 +43,8 @@ const Nav = () => {
         <>
           {user?._id && <Link to={`pets/users/${user._id}`}>My Pets</Link>}
           {user?._id && <Link to={`/users/${user._id}`}>Profile Settings</Link>}
+          {user?.isAdmin && <Link to='/dashboard'>Dashboard</Link>} {/* Add link to dashboard for admin users */}
+          {user?.isAdmin && <Link to='/pets'>Add Pet</Link>} {/* Add link to dashboard for admin users */}
           <button onClick={handleLogOut}>Log Out</button>
         </>
       )}

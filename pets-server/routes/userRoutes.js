@@ -7,6 +7,7 @@ const router = express.Router()
 
 /*  /users    */
 
+router.get('/', auth, UsersController.getAllUsers);
 router.post('/signup', validateBody(signupSchema), passwordsMatch, isNewUser, hashPwd, UsersController.signup);
 
 
@@ -35,9 +36,9 @@ router.get('/logout', (req, res) => {
 
 router.get('/check-status', auth, UsersController.checkStatus)
 
-router.get('/:id', auth,  UsersController.getUserbyID);
+router.get('/:id', auth, UsersController.getUserbyID);
 
-router.put('/:id', validateBody(signupSchema), passwordsMatch, hashPwd,  UsersController.editUser);
+router.put('/:id', validateBody(signupSchema), passwordsMatch, hashPwd, UsersController.editUser);
 
 
 module.exports = router

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 import { PetContext } from '../context/PetProvider';
 import PetList from './PetList';
 
@@ -24,7 +24,7 @@ const SearchPage = () => {
   };
 
   return (
-    <div className="search-page">
+    <Container>
       <h2>Search Pets</h2>
       <Form onSubmit={handleSearch}>
         <Form.Group controlId="adoptionStatus">
@@ -87,7 +87,8 @@ const SearchPage = () => {
       </Form>
 
       <PetList /> 
-    </div>
+      </Container>
+
   );
 };
 

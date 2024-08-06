@@ -6,7 +6,7 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [userList, setUserList] = useState([]);
-  const { userToken } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const fetchUsers = async () => {
     try {

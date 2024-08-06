@@ -1,4 +1,4 @@
-const { addUserModel, editUserModel ,getUserbyIDModel} = require('../models/usersModel');
+const { addUserModel, editUserModel, getUserbyIDModel,getAllUsersModel } = require('../models/usersModel');
 require('dotenv').config();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -37,7 +37,7 @@ const login = async (req, res) => {
 const checkStatus = (req, res) => {
   try {
     const { _id, firstName, lastName, isAdmin } = req.body;
-    
+
     res.send({ ok: true, _id, firstName, lastName, isAdmin });
   } catch (err) {
     res.status(500).send(err);
@@ -55,6 +55,15 @@ const editUser = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await getAllUsersModel();
+    res.status(200).send(users);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(err.message);
+  }
+};
 const getUserbyID = async (req, res) => {
   try {
     const { id } = req.params;
@@ -65,4 +74,4 @@ const getUserbyID = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
-module.exports = { signup, login, checkStatus, editUser ,getUserbyID};
+module.exports = { signup, login, checkStatus, editUser, getUserbyID, getAllUsers };

@@ -28,6 +28,16 @@ const editUserModel = async (id, editedData) => {
     throw new Error(err.message);
   }
 };
+const getAllUsersModel = async () => {
+  
+  try {
+    const allUsers = await User.find();
+    return allUsers;
+  } catch (err) {
+    console.error(err);
+    throw new Error(err.message);
+  }
+};
 const getUserbyIDModel = async (id) => {
   try {
     const user = await User.findById(id);
@@ -37,4 +47,4 @@ const getUserbyIDModel = async (id) => {
     throw new Error(err.message);
   }
 };
-module.exports = { getUserByEmailModel, addUserModel, editUserModel, getUserbyIDModel }
+module.exports = { getUserByEmailModel, addUserModel, editUserModel, getUserbyIDModel ,getAllUsersModel}

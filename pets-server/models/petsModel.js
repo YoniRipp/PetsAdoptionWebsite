@@ -1,5 +1,6 @@
 const Pet = require('../models/Pet'); // Adjust the path based on your actual model setup
 const User = require('../models/User'); // Adjust the path based on your actual model setup
+
 const getAllPetsModel = async () => {
   
   try {
